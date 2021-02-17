@@ -53,16 +53,16 @@
 
 
 // 116
-// class Parrot {
-//   //default argument value
-//   constructor(name = "A nameless parrot") {
-//     this.name = name;
-//   }
+class Parrot {
+  //default argument value
+  constructor(name = "A nameless parrot") {
+    this.name = name;
+  }
   
-//   speak() {
-//     return `${this.name} want a cracker!`;
-//   }
-// }
+  speak() {
+    return `${this.name} want a cracker!`;
+  }
+}
 
 class ApprenticeParrot extends Parrot {
   constructor(name) {
