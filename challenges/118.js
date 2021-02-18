@@ -52,21 +52,44 @@
 // After invoking the speak function 3 times, on the 4th invocation, `ApprenticeParrot` should wake up and respond normally.
 
 
+// 116
 class Parrot {
- // ...
+  //default argument value
+  constructor(name = "A nameless parrot") {
+    this.name = name;
+  }
+  
+  speak() {
+    return `${this.name} want a cracker!`;
+  }
 }
 
 class ApprenticeParrot extends Parrot {
- // ...
+  constructor(name) {
+    super(name);
+    //create counter variable
+    this.count = 1;
+  }
+  
+  //override super class
+  speak() {
+    if (this.count < 4) {
+      // console.log(this.count);
+      //increment before return statement
+      this.count++
+      return "😴";
+    } else {
+      this.count++;
+      return `${this.name} want a cracker!`;
+    }
+  }
 }
 
-let polly = new Parrot("Polly");
-polly.speak();
-// returns "Polly want a cracker!"
-
-
-// const me = new ApprenticeParrot("Your Name");
-// me.speak();
-// return "😴"
+let apprentice = new ApprenticeParrot("Meg");
+// apprentice.speak();
+// apprentice.speak();
+// apprentice.speak();
+// apprentice.speak();
+// console.log(apprentice.speak());
 
 module.exports = {Parrot, ApprenticeParrot};
